@@ -1,0 +1,280 @@
+1-Desenvolva uma função que receba dois valores inteiros e imprima o intervalo fechado entre eles.
+
+Desenvolva um programa principal que leia dois valores inteiros e chame a função anterior.
+
+For example:
+
+Input	Result
+4 8     4 5 6 7 8
+
+-3 3    -3 -2 -1 0 1 2 3
+
+9 3     3 4 5 6 7 8 9
+
+----/-/------/-/---------/-/---------------/-/----------------/-/------------------/-/----------/-----------
+
+#include <stdio.h>
+void function(int a, int b)
+{ 
+if(a<=b)
+{
+  while(a<=b)
+    {
+      printf("%d ",a);
+      a++;
+    }
+}
+  else
+  {
+   while(b<=a)
+     {
+       printf("%d ",b);
+       b++;
+     }
+  }
+}
+int main()
+{
+  int c,d;
+  scanf("%d%d",&c,&d);
+  function(c, d);
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2-Para resolver este exercício, siga os passos abaixo:
+
+Escreva uma função que receba os valores inteiros n1, n2 e x como parâmetro, e imprima os valores do intervalo fechado de n1 a n2 que divididos por x dão resto 5, em ordem crescente. A função deve funcionar inclusive se o valor de n2 for menor que n1.
+
+Escreva uma função principal (main) que ​leia​ os valores inteiros n1, n2 e x. Por fim, chame​ a função desenvolvida no item anterior. 
+For example:
+
+Input	Result
+0       5 11 17 23 29 35 41 47 
+50
+6
+
+35      5 12 19 26 33 
+3
+7
+
+----/-/------/-/---------/-/---------------/-/----------------/-/------------------/-/----------/-----------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void function(int n1,int n2, int x)
+{ 
+  int cont;
+  
+    if(n1<n2)
+    {
+      while(n1<=n2)
+      { 
+        cont=n1%x;
+      
+        if(cont==5)
+        {
+          printf("%d ",n1);
+          
+      
+        }
+        n1++;
+      }
+    }
+    else 
+    {
+      while(n1>=n2)
+      { 
+        if((n2%x)==5)
+        {
+          printf("%d ",n2);
+          
+      
+        }
+        n2++;
+      }  
+    }
+}
+
+int main()
+{
+  int c,d,y;
+  scanf("%d",&c);
+  scanf("%d",&d);
+  scanf("%d",&y);
+  
+  function(c, d,y);
+}
+
+------------------------------------------------------------------------------------------------------------
+
+3-Para resolver este exercício, siga os passos abaixo:
+
+Escreva uma função que receba os valores inteiros n1, n2 e x como parâmetro, e imprima os múltiplos de x que pertencem ao intervalo fechado entre n1 e n2, em ordem crescente.
+
+Escreva uma função principal (main) que ​leia​ os valores inteiros n1, n2 e x. Por fim, chame a função desenvolvida no item anterior.
+
+
+
+For example:
+
+Input	     Result
+-10 10 5    -10 -5 0 5 10
+
+1 30 7       7 14 21 28
+
+1 100 13     13 26 39 52 65 78 91
+
+----/-/------/-/---------/-/---------------/-/----------------/-/------------------/-/----------/-----------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void function(int n1,int n2, int x)
+{ 
+  
+  int cont;
+  
+  
+      while(n1<=n2)
+      { 
+        cont=n1%x;
+      
+        if(cont==0)
+        {
+          printf("%d ",n1);
+          
+      
+        }
+        n1++;
+      }
+    
+      
+    
+}
+
+int main()
+{
+  int c,d,y;
+  scanf("%d",&c);
+  scanf("%d",&d);
+  scanf("%d",&y);
+  
+  function(c, d,y);
+}
+
+------------------------------------------------------------------------------------------------------------
+
+4-De acordo com o regimento da UFJF, para que um aluno seja aprovado numa disciplina ele precisa ter nota final maior ou igual a 60 e ter frequência mínima de 75%, caso contrário o aluno será reprovado. Na disciplina de Algoritmos, caso o aluno tenha frequência suficiente mas não tenha atingido a nota final mínima, ele poderá fazer a prova substitutiva para tentar melhorar a sua nota final, desde que tenha realizado uma quantidade mínima de atividades.
+
+ a) Desenvolver uma função que receba três valores como parâmetros: nota final, número de faltas e número de tarefas realizadas. A função deverá imprimir, de acordo com os critérios descritos acima: “Aprovado”, “Reprovado” ou “O aluno tem direito de fazer a prova substitutiva”. Considere que foram dadas 60 aulas e que nestas aulas foram realizadas 45 atividades. O aluno precisa ter realizado no mínimo 30 atividades para poder fazer a prova substitutiva. É obrigatório o uso do ELSE nesta questão.
+
+b) Fazer um programa que leia a quantidade de alunos da turma, a nota final, número de faltas e o número de tarefas realizadas nas aulas de cada aluno e chame a função desenvolvida no item (a) para imprimir a situação de todos os alunos.
+
+For example:
+
+Input	    Result
+1           
+61 15 32    Aprovado
+
+2           
+50 10 31    O aluno tem direito de fazer a prova substitutiva
+59 25 31    Reprovado
+
+3           
+59 25 31    Reprovado
+70 12 34    Aprovado
+52 25 29    Reprovado
+
+----/-/------/-/---------/-/---------------/-/----------------/-/------------------/-/----------/-----------
+
+
+#include <stdio.h>
+void function(int nf, int fal, int atv) {
+  int fre;
+  fre = 16;
+
+  if (nf >= 60) {
+    if (fal < fre) {
+      printf("Aprovado\n");
+    } else {
+      printf("Reprovado\n");
+    }
+  } else if (nf <= 60 && atv >= 30 && fal < fre) {
+    printf("O aluno tem direito de fazer a prova substitutiva\n");
+
+  } else {
+    printf("Reprovado\n");
+  }
+}
+
+int main() {
+  int a, b, c,d,i;
+  scanf("%d", &d);
+  scanf("%d", &a);
+  scanf("%d", &b);
+  scanf("%d", &c);
+  
+  i=0;
+  while(i<d){
+    function(a, b, c);
+      i++;
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
+  
+  }
+  ;
+}
+
+------------------------------------------------------------------------------------------------------------
+
+5-Escreva uma função que recebe como parâmetro um número inteiro n. A função deve retornar 1 caso o número digitado seja primo e 0 caso contrário. Faça também um programa  (main) para ler o número e chamar essa função. Deverá imprimir “PRIMO” caso a função retorne 1 e "NAO PRIMO" caso contrário.
+
+Dica: Números primos são os números naturais que têm apenas dois divisores diferentes: o 1 e ele mesmo.
+
+For example:
+
+Input	Result
+7       PRIMO
+
+102     NAO PRIMO
+
+----/-/------/-/---------/-/---------------/-/----------------/-/------------------/-/----------/-----------
+
+#include <stdio.h>
+#include <math.h>
+
+int function(int numero){
+    int i=2;
+    int p=1;
+    
+    while(i<numero){
+        if(numero%i==0){
+            p=0;
+        }
+      i++;
+    }
+    return p;
+}
+
+int main(){
+    int Num,Resultado;
+    
+    scanf("%d",&Num);
+
+    Resultado=function(Num);
+
+
+    if(Resultado == 1){
+        printf("PRIMO");
+    }
+    else{
+        printf("NAO PRIMO");
+    }
+
+    
+    return 0;
+}
+
