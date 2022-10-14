@@ -1,0 +1,163 @@
+1- Faça um programa que leia um valor inteiro do teclado e imprima na tela o seu dobro, triplo e quadrado.
+
+For example:
+
+Input	Result
+13      Valor: 13
+        Dobro: 26, Triplo: 39, Quadrado: 169
+
+2       Valor: 2
+        Dobro: 4, Triplo: 6, Quadrado: 4
+
+
+-----------------/-/-----------------/-/-----------------------/-/-----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main() {
+    int val,dobro,triplo,quad;
+    scanf("%d",&val);
+    dobro=val*2;
+    triplo=val*3;
+    quad=val*val;
+    printf("Valor: %d\n",val);
+    printf("Dobro: %d, Triplo: %d, Quadrado: %d",dobro,triplo,quad);
+    return 0;
+}
+
+
+---------------------------------------------------------------------------------------------------
+2-Faça um algoritmo que leia as 3 notas de um aluno, calcule e imprima a média final deste aluno. 
+Considerar que a média é ponderada e que o peso das notas é: 2, 3 e 5, respectivamente.
+
+ 
+
+For example:
+
+Input	       Result
+60 60 60   Media final: 60.0
+
+20 50 70   Media final: 54.0
+
+-----------------/-/-----------------/-/-----------------------/-/-----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  double a,b,c,m;
+  scanf("%lf %lf %lf",&a,&b,&c);
+  m=((a*2)+(b*3)+(c*5))/(2+3+5);
+  printf("Media final: %.1lf",m);
+  return 0;
+}
+
+
+---------------------------------------------------------------------------------------------------
+3-Escreva um algoritmo que leia três números inteiros e positivos (A, B, C), calcule e imprima D com base em R e S:
+
+R = (A + B)2
+S = (B + C)2
+D = (R + S)/2
+For example:
+
+Input	Result
+0 0 0   D = 0
+1 2 3   D = 17
+
+-----------------/-/-----------------/-/-----------------------/-/-----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main (){
+  int A,B,C,D,R,S;
+  scanf("%d",&A);
+  scanf("%d",&B);
+  scanf("%d",&C);
+  
+  R=(A+B)*(A+B);
+  S=(B+C)*(B+C);
+  D=(R+S)/2;
+  printf("D = %d",D);
+}
+
+
+---------------------------------------------------------------------------------------------------
+
+4-Faça um algoritmo que leia a idade de uma pessoa expressa em dias e imprima-a
+expressa em anos, meses e dias.
+
+Observação: 1 mês = 30 dias e 1 ano = 365 dias
+
+ 
+
+For example:
+
+Input	Result
+365     anos: 1, meses: 0, dias: 0
+
+1       anos: 0, meses: 0, dias: 1
+
+-----------------/-/-----------------/-/-----------------------/-/-----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int a,m,d,calc1,calc2;
+  scanf("%d",&d);
+  a=d/365;
+   calc1=d%365; 
+  m= calc1/30;
+   calc2= calc1%30;
+
+  printf("anos: %d, meses: %d, dias: %d ",a,m,calc2);
+  
+}
+
+---------------------------------------------------------------------------------------------------
+
+5-Faça um programa que leia três valores e apresente o maior dos três valores lidos seguido da mensagem “eh o maior”. Utilize a fórmula:
+
+MaiorAB=(a+b+abs(a−b))/2
+
+onde abs( x ) é uma função já existente que calcula o valor absoluto de um número x.
+
+Obs.: a fórmula apenas calcula o maior entre os dois primeiros (a e b). Um segundo passo, portanto, é necessário para chegar no resultado esperado. 
+
+Entrada:
+
+A entrada contém três valores inteiros.
+
+Saída:
+
+Imprima o maior dos três valores seguido por um espaço e a mensagem "eh o maior".
+
+For example:
+
+Input	     Result
+7 14 106   106 eh o maior
+
+217 14 6   217 eh o maior
+
+-----------------/-/-----------------/-/-----------------------/-/-----------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+ int a,b,c,calc1,calc2;
+  scanf("%d%d%d",&a,&b,&c);
+  calc1=(a+b+abs(a-b))/2;
+  calc2=(calc1+c+abs(calc1-c))/2;
+  
+  
+  
+printf("%d eh o maior",calc2);
+
+  
+    return 0;
+
+  }
+
+
