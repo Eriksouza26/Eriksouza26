@@ -1,0 +1,250 @@
+1-Para resolver este exercício, siga os passos abaixo:
+Escreva uma função que receba como parâmetro o salário atual e o tempo de serviço (em anos, maior ou igual a zero) de um funcionário, e calcule o seu salário reajustado. A função deverá retornar o salário reajustado seguindo as seguintes regras:
+Funcionários com até 1 ano de empresa, receberão aumento de 10%.
+Funcionários com mais de um ano de tempo de serviço, receberão aumento de 20%.
+Caso algum dos parâmetros seja inválido (a função deve retornar o valor 0).
+
+2. Escreva uma função principal (main) que leia o salário atual e o tempo de serviço do teclado, chame a função desenvolvida no item anterior e imprima o salário reajustado conforme os exemplos a seguir.
+
+For example:
+
+Input	Result
+2000.0  Salario reajustado: R$ 2200.00
+0.5
+
+3500.0  Salario reajustado: R$ 4200.00
+6.0
+
+-200.0  Salario reajustado: R$ 0.00
+2.0
+
+-------/-/----------/-/------------/-/-----------------------/-/---------------------/-/--------/--/-----
+
+#include <stdio.h>
+float function(float s,float a){
+ if(a<0 || s<0) {
+    return 0;
+                }else{
+    if(a<=1){
+      s=s+(s*10/100);
+      return s;
+            }else {
+      s=s+(s*20/100);
+      return s;
+                  }
+                      }
+}
+
+int main(void) {
+float salario,sa,anos;
+
+  scanf("%f%f",&salario,&anos);
+  sa=function(salario,anos);
+  printf("Salario reajustado: R$ %.2f",sa);  
+  
+  return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------
+2-Faça uma função que receba três valores reais (x,y,z) e imprima na tela se eles formam os lados de um triângulo. Para formar um triângulo, os valores devem atender às seguintes condições:
+
+(x < y + z) e (y < x + z) e (z < x + y)
+
+Faça um programa principal que leia três valores reais e chame a função anterior. 
+
+For example:
+
+Input	Result
+4.0     Os valores não formam os lados de um triângulo.
+2.2
+1.4
+
+3.0     Os valores formam os lados de um triângulo.
+4.0
+5.0
+
+-------/-/----------/-/------------/-/-----------------------/-/---------------------/-/--------/--/-----
+#include <stdio.h>
+
+void function(float x,float y,float z)
+{
+  if((x < y + z) && (y < x + z) && (z < x + y))
+  {
+    printf("Os valores formam os lados de um triângulo.");
+  }
+  else
+  {
+    printf("Os valores não formam os lados de um triângulo.");
+  }
+  
+}
+
+int main(){
+  float a,b,c;
+  scanf("%f%f%f",&a,&b,&c);
+  function(a,b,c);
+  return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+3-Para resolver este exercício, siga os passos abaixo:
+Escreva uma função que receba como parâmetro um inteiro (dia da semana) e imprima o seu nome por extenso. Considere que o número 1 representa o domingo; 2 a segunda-feira, etc. Caso o número não corresponda a um dia da semana, a função deve exibir a mensagem "Dia da semana inválido!".
+Escreva uma função principal (main) que leia do teclado um número inteiro e chame a função desenvolvida no item anterior.
+For example:
+
+Input	Result
+2       Segunda-feira!
+
+10      Dia da semana inválido!
+
+-------/-/----------/-/------------/-/-----------------------/-/---------------------/-/--------/--/-----
+
+#include <stdio.h>
+void function(int ds)
+{
+  switch(ds)
+  {
+  case 1:printf("Domingo!");
+        break;
+  case 2:printf("Segunda-feira!");
+        break;
+  case 3:printf("Terça-feira!");
+        break;
+  case 4:printf("Quarta-feira!");
+        break;
+  case 5:printf("Quinta-feira!");
+        break;
+  case 6:printf("Sexta-feira!");
+        break;
+  case 7:printf("Sábado!");
+        break;
+    default:printf("Dia da semana inválido!");
+    
+  }
+}
+
+int main()
+{
+  int sa;
+  scanf("%d",&sa);
+  function(sa);
+  
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+4-Para resolver este exercício, siga os passos abaixo:
+
+1- Escreva uma função que receba como parâmetro o ano atual e o ano de nascimento de uma pessoa e imprima sua idade. A seguir, imprima:
+
+"Bebê", se a pessoa tem de 0 a 3 anos;
+"Criança", se a pessoa tem de 4 a 10 anos;
+"Adolescente", se a pessoa tem de 11 a 18 anos;
+"Adulta", se a pessoa tem de 19 a 50 anos;
+"Idosa", se a pessoa tem 51 anos ou mais.
+2- Escreva uma função principal (main) que leia o ano atual e o ano de nascimento do teclado e chame a função desenvolvida no item anterior.
+
+For example:
+
+Input	Result
+2020    70
+1950    Idosa
+
+
+2020    2
+2018    Bebê
+
+-------/-/----------/-/------------/-/-----------------------/-/---------------------/-/--------/--/-----
+
+
+#include <stdio.h>
+void function(int ano, int ani) {
+  int idade;
+  idade = ano - ani;
+  printf("%d\n", idade);
+  switch (idade) {
+  case 0 ... 3:
+    printf("Bebê");
+    break;
+  case 4 ... 10:
+    printf("Criança");
+    break;
+  case 11 ... 18:
+    printf("Adolescente");
+    break;
+  case 19 ... 50:
+    printf("Adulta");
+    break;
+  case 51 ... 9999:
+    printf("Idosa");
+    break;
+  }
+}
+int main() {
+  int an, ni;
+  scanf("%d%d", &an, &ni);
+  function(an, ni);
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+5-Desenvolver uma função que receba o valor total de um pedido e o número de produtos adquiridos e imprima o valor a ser pago, considerando as seguintes condições:
+
+Pedidos acima de R$ 100,00 com um único produto recebem desconto de 7% e frete grátis;
+Pedidos acima de R$ 100,00 com mais de um produto, recebem desconto de 7% e pagam frete de R$ 5,00;
+Pedidos que custam entre R$ 70,00 e R$ 100,00 (inclusive) recebem desconto de 6% e pagam frete R$ 10,00;
+Demais situações não recebem desconto e pagam frete de R$ 10,00;
+Entrada: ValorTotal QuantidadeProdudos.
+Desenvolva a função principal (main) que leia o valor total do pedido e o número de produtos e chame a função anterior.
+
+For example:
+
+Input	Result
+200 1   Valor a ser pago: R$ 186.00
+
+100 5   Valor a ser pago: R$ 104.00
+
+-------/-/----------/-/------------/-/-----------------------/-/---------------------/-/--------/--/-----
+
+#include <stdio.h>
+void function(float vt,int p)
+{
+  if(vt>100 && p==1)
+  {
+    vt=vt-(vt*7/100);
+    printf("Valor a ser pago: R$ %.2f",vt);
+  }
+  if(vt>100 && p>1)
+  { 
+    vt=vt-(vt*7/100)+5;
+    printf("Valor a ser pago: R$ %.2f",vt);
+  }
+  if(vt>=60 && vt<=100)
+  {
+    vt=vt-(vt*6/100)+10;
+    printf("Valor a ser pago: R$ %.2f",vt);
+  }
+  if(vt<60)
+  {
+    vt=vt+10;
+    printf("Valor a ser pago: R$ %.2f",vt);
+  }
+}
+int main()
+{
+  float v;
+  int pr;
+  scanf("%f%d",&v,&pr);
+  function(v,pr);
+  return 0;
+}
+
+
+
+
+
+
+
