@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main() {
+    int val,dobro,triplo,quad;
+    scanf("%d",&val);
+    dobro=val*2;
+    triplo=val*3;
+    quad=val*val;
+    printf("Valor: %d\n",val);
+    printf("Dobro: %d, Triplo: %d, Quadrado: %d",dobro,triplo,quad);
+    return 0;
+}
